@@ -83,7 +83,7 @@ class RadianceToBrightnessTemperature(Filter):
     def _iasi_wavenumbers(ch):
         """Vectorised IASI channel -> wavenumber [cm^-1]"""
         ch = np.asarray(ch, dtype=np.float32)
-        nu = 645.0 + 0.25 * (ch - 1) # see https://space.oscar.wmo.int/instruments/view/iasi
+        nu = 645.0 + 0.25 * (ch - 1)  # see https://space.oscar.wmo.int/instruments/view/iasi
         return nu
 
     def forward(self, obs_df: pd.DataFrame) -> pd.DataFrame:
